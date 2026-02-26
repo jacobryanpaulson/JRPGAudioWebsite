@@ -25,9 +25,9 @@ z-index: 999;
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 20px;
 }
-
+/*
 #navbar__logo{
     background-color: #ff8177;
     background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
@@ -40,15 +40,23 @@ z-index: 999;
     align-items: center;
     cursor: pointer;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 2rem; 
     
 
 
 }
 .fa-logo{
     margin-right: .5rem;
-}
+} */
 
+.logo{
+    display: flex;
+    align-items: left;
+    cursor: pointer;
+    height: 170%;
+    width: auto;
+    padding: 0;
+}
 .navbar__menu{
     display: flex;
     align-items: center;
@@ -252,6 +260,17 @@ transition: all .3s ease;
     -moz-text-fill-color:transparent;
 
 }
+.main__content h3 {
+    font-size: 2rem;
+    background-color: #ff8177 ;
+    background-image: linear-gradient(to top, #b721ff 0%, #21D4FD 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color:transparent;
+
+}
 .main__content p {
    margin-top: 1rem;
    font-size: 2rem;
@@ -305,14 +324,21 @@ transition: all .3s ease;
 
 }
 
-/*.main__img--container {
-    text-align: center;
+.about__img--container {
+    grid-area: image;
+    text-align: right;
+    display: flex;
+    justify-content: center;
+
 }
 
-#main__img {
-    height: 80%;
-    width: 80%; 
-} */
+#about__img {
+    height: auto;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 4px;
+    
+} 
 .main__vid--container {
     text-align: center;
 }
@@ -320,6 +346,43 @@ transition: all .3s ease;
 #main__vid {
     height: 100%;
     width: 100%;
+}
+.about {
+    width: 100%;
+    background-color: #141414;
+}
+
+.about__container {
+    display: grid;
+    grid-template-areas: "text image";
+    grid-template-columns: 1.2fr .8fr;
+    align-items: center;
+  /*justify-self: center;*/
+    margin: 0 auto;
+    min-height: 90vh;
+
+    background-color: #141414;
+/*-index: 1;*/
+    width:100%;
+    max-width: 1920px;
+    padding: 50px 100px;
+    gap: 60px;
+
+}
+.about__content{
+    grid-area: text;
+   
+   
+}
+.about__content p { 
+grid-area: text;
+   margin-top: 1rem;
+   font-size: 1.5rem;
+   font-weight: 500;
+   color: #fff;
+   text-align: left;
+
+
 }
 
 /* Mobile Responsive*/
@@ -354,7 +417,37 @@ transition: all .3s ease;
         font-size: 1rem;
        margin-top: 1rem; 
     }
-      /*  .main__vid {
+     .about__container {
+        grid-template-columns: 1fr;
+        grid-template-areas: "text""image";
+      padding: 40px 24px;
+     
+
+    }
+     .about__content {
+  
+        text-align: center;
+
+    }
+     .about__content p {
+        font-size: 1rem;
+        line-height: 1.7;
+        text-align: center;
+     
+    }
+    .about__img--container{
+      justify-content: center;
+      margin-top: 20px;
+    }
+    #about__img {
+      width: 80%;
+      max-width: 380px;
+  
+    }
+    .main__vid--container{
+        padding-bottom: 100px;
+    }
+        .main__vid {
         display: grid;
         grid-template-columns: auto;
         align-items: center;
@@ -362,8 +455,9 @@ transition: all .3s ease;
         width: 100%;
         margin: 0 auto;
         height: 90vh;
-    } */
+    } 
 }
+
 
 @media screen and (max-width:480px) {
      .main__content {
@@ -382,12 +476,45 @@ transition: all .3s ease;
     }
 
     .main__content p {
-        font-size: .75
-        rem;
+        font-size: .75rem;
        margin-top: 1rem; 
     }
     .main__btn {
         padding: 12px 36px;
         margin: 2.5rem 0;
     }
+}
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #ff80a6;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  
+  background-color: #141414;
+  padding: 20px;
+  height: 90vh;
 }

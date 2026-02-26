@@ -15,7 +15,8 @@
         
           <nav class="navbar">
             <div class="navbar__container">
-                <a href="/" id="navbar__logo"><i class="fa-solid fa-music"></i>JRPGAudio </a> 
+               <div class="logo"><img src="images/image0.png" alt=""></div>
+                <a href="/" id="navbar__logo"> </a> 
                 <div class="navbar__toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -44,6 +45,59 @@
                     </li>
                 </ul>
             </div>
-        </nav>     
+        </nav>   
+        <div class="container">
+  <form action="https://formsubmit.co/jrpgaudio@gmail.com" Method="POST">
+
+    <label for="fname" style="color: #fff;">Full Name </label>
+    <input type="text" id="fname" name="full name" placeholder="Your name..">
+
+    <label for="email"style="color: #fff;">Email</label>
+    <input type="text" id="email" name="email" placeholder="Your email address">
+   
+
+    <label for="subject"style="color: #fff;">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+  <script>
+    const constraints = {
+      name: {
+        presence: { allowEmpty: false }
+      },
+      email: {
+        presence: { allowEmpty: false },
+        email: true
+      },
+      message: {
+        presence: { allowEmpty: false }
+      }
+    };
+
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(event) {
+      const formValues = {
+        name: form.elements.name.value,
+        email: form.elements.email.value,
+        message: form.elements.message.value
+      };
+
+      const errors = validate(formValues, constraints);
+      if (errors) {
+        event.preventDefault();
+        const errorMessage = Object.values(errors)
+          .map(function(fieldValues) {
+            return fieldValues.join(', ');
+          })
+          .join("\n");
+
+        alert(errorMessage);
+      }
+    }, false);
+  </script>
+</div>  
 </body>
 </html>
