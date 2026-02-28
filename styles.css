@@ -4,6 +4,9 @@
     padding: 0;
     font-family: 'Lexend', sans-serif;
 }
+body{
+    overflow-x:hidden;
+}
 
 .navbar {
 background: #131313;
@@ -460,15 +463,18 @@ grid-area: text;
 
 
 @media screen and (max-width:480px) {
+   
+
      .main__content {
         text-align: center;
         margin-bottom: 3rem;
+     }
 
-    }
+    
 
     .main__content h1 {
         font-size: 2rem;
-        margin-top: 2rem;
+        margin-top: rem;
     }
 
     .main__content h2 {
@@ -483,6 +489,20 @@ grid-area: text;
         padding: 12px 36px;
         margin: 2.5rem 0;
     }
+       .main__vid--container{
+        padding-bottom: 100px;
+    }
+        .main__vid {
+        display: flex;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 50%;
+        margin: 0 auto;
+        height: 60vh;
+    } 
+
+
 }
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
