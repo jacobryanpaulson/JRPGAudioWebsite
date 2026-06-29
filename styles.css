@@ -234,7 +234,7 @@ transition: all .3s ease;
     align-items: center;
     justify-self: center;
     margin: 0 auto;
-    height: 90vh;
+    height: 50vh;
     background-color: #141414;
     z-index: 1;
     width: 100%;
@@ -244,7 +244,7 @@ transition: all .3s ease;
 }
 
 .main__content h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     background-color: #ff8177 ;
     background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
     background-size: 100%;
@@ -255,7 +255,7 @@ transition: all .3s ease;
 
 }
 .main__content h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     background-color: #ff8177 ;
     background-image: linear-gradient(to top, #b721ff 0%, #21D4FD 100%);
     background-size: 100%;
@@ -263,6 +263,7 @@ transition: all .3s ease;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color:transparent;
+    
 
 }
 .main__content h3 {
@@ -328,7 +329,39 @@ transition: all .3s ease;
     width: 100%;
 
 }
+.second__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;     /* Changed from bottom to center */
+    justify-self: center;    /* Changed from left to center */
+    margin: 0 auto;
+    min-height: 60vh;        /* Changed from 100vh to fit content cleanly */
+    background-color: #141414;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 30px 50px 50px 50px;
+}
 
+.second__content h1 {
+    font-size: 3rem;
+    background-color: #ff8177 ;
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color:transparent;
+
+}
+.second__content p {
+   margin-top: 1rem;
+   font-size: 2rem;
+   font-weight: 700;
+   color: #fff;
+
+
+}
 .about__img--container {
     grid-area: image;
     text-align: right;
@@ -389,7 +422,32 @@ grid-area: text;
 
 
 }
+.second__audio--container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between each audio player */
+    width: 100%;
+    max-width: 500px; /* Prevents players from getting stretched too wide */
+    justify-self: center;
+}
 
+/* Styles the text labels above each player */
+.audio__track {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.audio__track-title {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Make default HTML5 audio player responsive */
+.second__audio--container audio {
+    width: 100%;
+}
 /* Mobile Responsive*/
 
 @media screen and (max-width: 768px) {
@@ -418,9 +476,29 @@ grid-area: text;
         font-size: 1rem;
     }
 
-    .main__content p {
+    .button__content p {
         font-size: 1.5rem;
        margin-top: 1rem; 
+    }
+    .main__vid--container {
+    display: flex;
+    justify-content: center; /* Centers the iframe inside its grid half */
+    align-items: center;
+    width: 100%;
+}
+
+.main__vid--container iframe {
+    max-width: 100%;        /* Prevents the video from breaking out of the container */
+    height: auto;
+    aspect-ratio: 16 / 9;   /* Keeps video proportions uniform */
+    border-radius: 4px;     /* Matches your theme button styling */
+}
+     .second__container {
+        grid-template-columns: 1fr; /* Stacks text on top of video for mobile */
+        text-align: center;
+        height: auto;
+        padding: 40px 24px;
+        gap: 30px;
     }
      .about__container {
         grid-template-columns: 1fr;
@@ -487,11 +565,11 @@ grid-area: text;
         font-size: .75rem;
     }
 
-    .main__content p {
+    .button__content p {
         font-size: .75rem;
        margin-top: 1rem; 
     }
-    .main__btn {
+    .button__btn {
         padding: 12px 36px;
         margin: 2.5rem 0;
     }
